@@ -1,11 +1,166 @@
-# portal
+# portalHSC
 A student portal designed for tutoring centres.
 
-> [!Caution]
->
-> # DISCLAIMER
->
-> **This progressive web app has been designed with a range of security vulnerabilities. The app has been specifically designed for students studying the [NESA HSC Software Engineering Course](https://curriculum.nsw.edu.au/learning-areas/tas/software-engineering-11-12-2022/content/n12/fa039e749d). The app is NOT secure and should only be used in a sandbox environment.**
 
-<hr style="border: 0.1rem solid #d1d9e0;background:#d1d9e0"/>
+
+# Idenifying and Defining 
+
+
+## Define and analyse problem requirements
+The following tables outlines both functional and performance requirements, prioritized from most essential to optional, distinguishing between core needs and potential opportunities for future implementation.
+
+### Needs 
+| Feature                  | Functional Requirement  | Performance Requirement |
+|--------------------------|------------------------ |--------------------------|
+| Login Functionality      | The system will include a user authentication feaure that verifies user credentials before granting access to eprsonalised content 
+  | Login requets must be processed within 2 seconds under normal load
+| Homework Submission      | Students must be able to submit homework assignments directly through the portal.           
+  | Uploads must support common file types (PDF, DOCX, JPG) with confirmation within 2 seconds.  |
+| Homework Feedback        | Tutors must be able to return marked homework with comments and grades.                               | Feedback must be accessible within 2 seconds of release, with optional download.             |
+| Class Timetable & Details| Students should be able to view upcoming classes, times, subjects, and tutor information.             | Updates to schedules must reflect in real-time with minimal latency.                         |
+| Invoice & Payment Viewing| Parents/students must be able to access current and past invoices.                                    | Invoices must load within 1–2 seconds and be available for PDF export.                       |
+| Solution Access          | Students should be able to access worked solutions or model answers.                                  | Should be available offline after first access and optimized for mobile viewing.             |
+| Student Profile Overview | Tutors/admins must be able to view student progress, class history, and notes.                        | Access must be secure, authenticated, and responsive under load.                             |
+| Announcement System      | Enable tutors/admins to broadcast messages and updates.                        
+  | Must not interfere with performance and should be optimized for mobile devices.              |
+
+### Oppurtunities
+| Feature                | Functional Requirement| Performance Requirement|
+|------------------------|-----------------------|------------------------|
+| Question Bank          | Provide a categorized database of practice problems and exam questions.     | Searchable by subject, difficulty, and topic with fast filtering.              |
+| Gamification Elements  | Introduce badges or progress rewards to motivate students.                  | Must not interfere with performance and should be optimized for mobile devices. |
+
+
+## Scheduling and financial feasibility
+
+Following comprehensive discussions with the client, the client HopeHSC requres a digital solution designed to streamline academic and adminstrative interactions between students and tutors. Therefore they have contacted us, the Fort Street Software Solutions Company, to create a tool that assists these students in preparation for the HSC. This tool will be a progressive web application (PWA) that increases efficiency of tasks such as marking homeworking, and managing invoices through digitisation. The name for this project will be "PortalHSC"
+
+Functionality Requirements: 
+- Login Functionality for students and teachers to have accounts.
+- Allow students to submit homework online.
+- Enable tutors to provide feedback on submitted homework.
+- Display class schedules and details to students.
+- Show invoices and payment history.
+- Provide access to homework solutions.
+- Allow tutors/admins to view student profiles and progress.
+- Send announcements to users.
+- (Optional) Offer a searchable question bank.
+- (Optional) Include gamification features like badges.
+
+Performance Requirements: 
+- All core features must be fully functional offline.
+- Maintain responsive performance and avoid lag
+- Interoperability between devices of different manufacturers
+- Avaliable through variety of internet browsers.
+- All data retrieval and submission must be secure and reliable under varying network conditions.
+
+All <ins>needs</ins> listed within the functional requirements will be completed before the optional <ins>oppurtunities</ins>. Prioritising these ensurs that the core user requirements are met, enabling basic tutoring and adminstrative processes, therefore suceeding in providing a solution for HopeHSC. The oppurtunities will be addressed later, as they enhance user experience but are not critical for the intial operation of the system. 
+All functionalities are independant of each other, except the interaction betwen allowing homeworks to submit homework online, and enabling tutors to provide feedback on this submitted homework. 
+
+Costs include: 
+- Development costs: Time and effort invested in designing, coding, testing and deploying the PWA. 
+- Hosting and Infrastructure: There may be a possibility of fees for cloud services or servers needed to host the application and store data securely
+
+### Entities, Data Structures, and Data Types
+
+- **Student**
+  - Data Structure: Array of records or database table
+  - Data Types:
+    - `String` – name, email
+    - `Integer` – age, student ID
+    - `Boolean` – active/inactive status
+
+- **Tutor**
+  - Data Structure: Array of records or database table
+  - Data Types:
+    - `String` – name, subject area
+    - `Integer` – tutor ID
+    - `Array` – list of assigned class IDs
+
+- **Homework**
+  - Data Structure: Array of records or database table
+  - Data Types:
+    - `String` – title, feedback comments
+    - `Date` – due date
+    - `File` – uploaded homework file
+    - `Integer` – mark awarded
+
+- **Invoice**
+  - Data Structure: Array of records or database table
+  - Data Types:
+    - `Integer` – amount
+    - `Date` – issue date, due date
+    - `Boolean` – payment status
+
+- **Class**
+  - Data Structure: Array of records or database table
+  - Data Types:
+    - `String` – subject, location
+    - `Date` – date and time
+    - `Integer` – duration in minutes
+    - `Array` – list of enrolled student IDs
+
+- **Solution**
+  - Data Structure: Array of records or database table
+  - Data Types:
+    - `String` – solution text
+    - `File` – attachment
+    - `Integer` – related homework ID
+
+- **Announcement**
+  - Data Structure: Array of records
+  - Data Types:
+    - `String` – title, content
+    - `Date` – time posted
+
+- **Question Bank**
+  - Data Structure: Nested array or separate database table
+  - Data Types:
+    - `String` – question text, topic
+    - `Integer` – difficulty level
+    - `Boolean` – whether answered
+
+- **Gamification Badge** *(optional)*
+  - Data Structure: Array stored within student record
+  - Data Types:
+    - `String` – badge name
+    - `Date` – date earned
+
+### Boundaries
+
+The tutoring portal PWA will operate within defined boundaries to ensure it remains manageable and be able to function its core purpose. Several aspects that fall under the services of HopeHSC will remain outside the system. These include:
+
+- Live tutoring sessions, which will occur using external platforms such as Zoom.
+- Payment processing for invoices will not be handled directly; instead the system will only display invoices. Payments options will be decided by HopeHSC, however will likely involve either bank transfer and cash payments in termly instalments.
+- Authentication systems such as Google Oauth aren't necessary, as there is limited to no malicious activity possible and the userbase will be private. Accounts will be created as required by admins.
+- Any policies, curriculum changes and rules will be agreed to and signed externally.
+
+### Tools
+A description of a veriety of different tools used during the production and implemntation of the PWA. 
+
+| Tool             | Description                                                  |
+|------------------|--------------------------------------------------------------|
+| Screenshot       |            |
+| Description      |             |
+| Algorithm Design |  |
+| Brainstorming    |        |
+| Code Generation  |                |
+| Data Dictionaries|      |
+| Debugging        |                       |
+| Installation     |                |
+| Maintenance      |               |
+| Mind-Mapping     |                |
+| Storyboards      |              |
+| Testing          |  |
+
+### Software implementation methods. 
+
+***Pilot** implementation involves rolling out the new system to a small, manageable group of users before a full-scale implementation. This method allows organisations to identify any issues or necessary adjustments in a controlled environment, reducing the risk of widespread problems.
+
+A pilot implementation is beneficial as by letting the tutoring portal be tested by a small group first, they can help identify and fix issues without wasting other students' time potentially dealing with a flawed system. Once the group and developer are satisfied with the solutoin, then it may be distrubited amongst the student body as a complete package, either immediately replacing the old system or filling in the digital gap within HopeHSC. 
+
+Direct implementatio would be risky, as the new system has not been thoroughly tested. 
+Parallel implementation would confuse the administrative, student and teaching staff during operations. 
+Phased implementation will take too long to implement. 
+
 
