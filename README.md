@@ -3,13 +3,13 @@ A student portal designed for tutoring centres.
 
 
 
-# Idenifying and Defining 
+## Idenifying and Defining 
 
 
-## Define and analyse problem requirements
+### Define and analyse problem requirements
 The following tables outlines both functional and performance requirements, prioritized from most essential to optional, distinguishing between core needs and potential opportunities for future implementation.
 
-### Needs 
+#### Needs 
 | Feature                  | Functional Requirement  | Performance Requirement |
 |--------------------------|------------------------ |--------------------------|
 | Login Functionality      | The system will include a user authentication feaure that verifies user credentials before granting access to eprsonalised content 
@@ -24,14 +24,14 @@ The following tables outlines both functional and performance requirements, prio
 | Announcement System      | Enable tutors/admins to broadcast messages and updates.                        
   | Must not interfere with performance and should be optimized for mobile devices.              |
 
-### Oppurtunities
+#### Oppurtunities
 | Feature                | Functional Requirement| Performance Requirement|
 |------------------------|-----------------------|------------------------|
 | Question Bank          | Provide a categorized database of practice problems and exam questions.     | Searchable by subject, difficulty, and topic with fast filtering.              |
 | Gamification Elements  | Introduce badges or progress rewards to motivate students.                  | Must not interfere with performance and should be optimized for mobile devices. |
 
 
-## Scheduling and financial feasibility
+### Scheduling and financial feasibility
 
 Following comprehensive discussions with the client, the client HopeHSC requres a digital solution designed to streamline academic and adminstrative interactions between students and tutors. Therefore they have contacted us, the Fort Street Software Solutions Company, to create a tool that assists these students in preparation for the HSC. This tool will be a progressive web application (PWA) that increases efficiency of tasks such as marking homeworking, and managing invoices through digitisation. The name for this project will be "PortalHSC"
 
@@ -61,23 +61,23 @@ Costs include:
 - Development costs: Time and effort invested in designing, coding, testing and deploying the PWA. 
 - Hosting and Infrastructure: There may be a possibility of fees for cloud services or servers needed to host the application and store data securely
 
-### Entities, Data Structures, and Data Types
+#### Entities, Data Structures, and Data Types
 
-- **Student**
+- Student
   - Data Structure: Array of records or database table
   - Data Types:
     - `String` – name, email
     - `Integer` – age, student ID
     - `Boolean` – active/inactive status
 
-- **Tutor**
+- Tutor
   - Data Structure: Array of records or database table
   - Data Types:
     - `String` – name, subject area
     - `Integer` – tutor ID
     - `Array` – list of assigned class IDs
 
-- **Homework**
+- Homework
   - Data Structure: Array of records or database table
   - Data Types:
     - `String` – title, feedback comments
@@ -85,14 +85,14 @@ Costs include:
     - `File` – uploaded homework file
     - `Integer` – mark awarded
 
-- **Invoice**
+- Invoice
   - Data Structure: Array of records or database table
   - Data Types:
     - `Integer` – amount
     - `Date` – issue date, due date
     - `Boolean` – payment status
 
-- **Class**
+- Class
   - Data Structure: Array of records or database table
   - Data Types:
     - `String` – subject, location
@@ -100,33 +100,33 @@ Costs include:
     - `Integer` – duration in minutes
     - `Array` – list of enrolled student IDs
 
-- **Solution**
+- Solution
   - Data Structure: Array of records or database table
   - Data Types:
     - `String` – solution text
     - `File` – attachment
     - `Integer` – related homework ID
 
-- **Announcement**
+- Announcement
   - Data Structure: Array of records
   - Data Types:
     - `String` – title, content
     - `Date` – time posted
 
-- **Question Bank**
+- Question Bank
   - Data Structure: Nested array or separate database table
   - Data Types:
     - `String` – question text, topic
     - `Integer` – difficulty level
     - `Boolean` – whether answered
 
-- **Gamification Badge** *(optional)*
+- Gamification Badge (optional)
   - Data Structure: Array stored within student record
   - Data Types:
     - `String` – badge name
     - `Date` – date earned
 
-### Boundaries
+#### Boundaries
 
 The tutoring portal PWA will operate within defined boundaries to ensure it remains manageable and be able to function its core purpose. Several aspects that fall under the services of HopeHSC will remain outside the system. These include:
 
@@ -135,7 +135,7 @@ The tutoring portal PWA will operate within defined boundaries to ensure it rema
 - Authentication systems such as Google Oauth aren't necessary, as there is limited to no malicious activity possible and the userbase will be private. Accounts will be created as required by admins.
 - Any policies, curriculum changes and rules will be agreed to and signed externally.
 
-### Tools
+#### Tools
 A description of a veriety of different tools used during the production and implemntation of the PWA. 
 
 | Tool             | Description                                                  |
@@ -153,7 +153,7 @@ A description of a veriety of different tools used during the production and imp
 | Storyboards      |              |
 | Testing          |  |
 
-### Software implementation methods. 
+#### Software implementation methods. 
 
 ***Pilot** implementation involves rolling out the new system to a small, manageable group of users before a full-scale implementation. This method allows organisations to identify any issues or necessary adjustments in a controlled environment, reducing the risk of widespread problems.
 
@@ -162,5 +162,40 @@ A pilot implementation is beneficial as by letting the tutoring portal be tested
 Direct implementatio would be risky, as the new system has not been thoroughly tested. 
 Parallel implementation would confuse the administrative, student and teaching staff during operations. 
 Phased implementation will take too long to implement. 
+
+## Reserach and Planning
+### Project Management
+#### Software Development Approaches
+### The Waterfall Software Development Approach
+
+| Question | Sample Explanation |
+|----------|--------------------|
+| 1.1 How are the logical progression of steps used throughout the life cycle? | The Waterfall model follows a strict, linear sequence of stages. Each stage must be fully completed before the next begins, ensuring a clear and logical flow. |
+| 1.2 What are the stages of ‘falling water’? | Requirements Gathering<br>System Design<br>Implementation (Coding)<br>Testing<br>Deployment<br>Maintenance |
+| 1.3 What are the advantages and disadvantages of this approach? | Advantages:<br>- Easy to manage due to its rigid structure<br>- Good for small or well-defined projects<br>- Documentation is thorough and complete<br>Disadvantages:<br>- Inflexible to changes<br>- No working product until late in the process<br>- Late discovery of issues during development can be costly |
+| 1.4 Give examples of the scale and types of developments that use this approach. | - Large-scale government or defence systems (tax systems)<br>- Large construction and infrastructure (bridges, air traffic control)<br>- Large-scale manufacturing projects (cars, vehicles)<br>- Large-scale healthcare projects (medical-record systems, medicinal rollout) |
+
+---
+
+### The WAgile Software Development Approach
+
+| Question | Sample Explanation |
+|----------|--------------------|
+| 2.1 Explain why it is a hybrid model | WAgile is hybrid as it combines the structure of Waterfall (upfront planning, documentation, etc.) and Agile’s flexibility (e.g., iterations, user feedback). |
+| 2.2 Analyse the ‘when’ intervention is applied during the development life cycle | Agile practices (like stand-ups, iterative development, testing) are introduced after the initial Waterfall stages, often during implementation or testing. It may start rigid but loosen control during later phases for adaptability. |
+| 2.3 Analyse the ‘how’ intervention is applied during the development life cycle | Agile interventions are layered into Waterfall by:<br>- Splitting implementation into sprints<br>- Including regular stakeholder reviews<br>- Allowing feedback loops during testing<br>This hybridization enables flexibility while maintaining upfront planning. |
+| 2.4 Give examples scale and types of developments that use this approach | - Medium to large projects in corporate environments<br>- Government or healthcare systems with compliance requirements<br>- Projects with fixed deadlines but evolving features |
+
+---
+
+### The Agile Software Development Approach
+
+| Question | Sample Explanation |
+|----------|--------------------|
+| 3.1 What is the rate of developing a final solution? | Agile delivers a working product early and often, typically every 1-4 weeks in sprints. |
+| 3.2 Explain method tailoring | Method tailoring involves adapting Agile methods (like Scrum, Kanban) to suit the team or project. For example, adjusting sprint lengths, roles, or tools to match the team’s needs and the project scope. |
+| 3.3 Explain iteration workflow | Each iteration (or sprint) concludes a round of:<br>- Planning<br>- Design<br>- Development<br>- Testing<br>- Review<br>After each cycle, feedback is incorporated into the next iteration, enabling rapid improvements. |
+| 3.4 Give examples of the scale and types of developments that use this approach | - Web and mobile app startups<br>- SaaS platforms<br>- Games and creative media projects<br>- Generally all small to medium sized projects |
+
 
 
