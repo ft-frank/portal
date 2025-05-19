@@ -163,7 +163,7 @@ Phased implementation will take too long to implement.
 ## Reserach and Planning
 ### Project Management
 #### Software Development Approaches
-### The Waterfall Software Development Approach
+##### The Waterfall Software Development Approach
 
 | Question | Sample Explanation |
 |----------|--------------------|
@@ -174,7 +174,7 @@ Phased implementation will take too long to implement.
 
 ---
 
-### The WAgile Software Development Approach
+##### The WAgile Software Development Approach
 
 | Question | Sample Explanation |
 |----------|--------------------|
@@ -185,7 +185,7 @@ Phased implementation will take too long to implement.
 
 ---
 
-### The Agile Software Development Approach
+##### The Agile Software Development Approach
 
 | Question | Sample Explanation |
 |----------|--------------------|
@@ -193,6 +193,10 @@ Phased implementation will take too long to implement.
 | 3.2 Explain method tailoring | Method tailoring involves adapting Agile methods (like Scrum, Kanban) to suit the team or project. For example, adjusting sprint lengths, roles, or tools to match the team’s needs and the project scope. |
 | 3.3 Explain iteration workflow | Each iteration (or sprint) concludes a round of:<br>- Planning<br>- Design<br>- Development<br>- Testing<br>- Review<br>After each cycle, feedback is incorporated into the next iteration, enabling rapid improvements. |
 | 3.4 Give examples of the scale and types of developments that use this approach | - Web and mobile app startups<br>- SaaS platforms<br>- Games and creative media projects<br>- Generally all small to medium sized projects |
+
+<ins>Venn Diagram</ins>
+
+![image](https://github.com/user-attachments/assets/ff3aeb3c-fcdb-49a9-9ec9-7068c5b74aa8)
 
 
 
