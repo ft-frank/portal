@@ -13,7 +13,7 @@ The following tables outlines both functional and performance requirements, prio
 | Feature                  | Functional Requirement  | Performance Requirement |
 |--------------------------|------------------------ |--------------------------|
 | Login Functionality      | The system will include a user authentication feaure that verifies user credentials before granting access to eprsonalised content 
-  | Login requets must be processed within 2 seconds under normal load
+  | Login requets must be processed within 2 seconds under normal load |
 | Homework Submission      | Students must be able to submit homework assignments directly through the portal.           
   | Uploads must support common file types (PDF, DOCX, JPG) with confirmation within 2 seconds.  |
 | Homework Feedback        | Tutors must be able to return marked homework with comments and grades.                               | Feedback must be accessible within 2 seconds of release, with optional download.             |
