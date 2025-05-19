@@ -162,8 +162,10 @@ Phased implementation will take too long to implement.
 
 ## Reserach and Planning
 ### Project Management
+Project management is the process of planning, organizing, and overseeing tasks and resources to achieve specific project goals within a set timeframe and budget. It ensures that a project is completed efficiently, meets requirements, and delivers value to clients
 #### Software Development Approaches
-##### The Waterfall Software Development Approach
+
+ <ins>The Waterfall Software Development Approach</ins>
 
 | Question | Sample Explanation |
 |----------|--------------------|
@@ -174,7 +176,7 @@ Phased implementation will take too long to implement.
 
 ---
 
-##### The WAgile Software Development Approach
+<ins>The WAgile Software Development Approach</ins>
 
 | Question | Sample Explanation |
 |----------|--------------------|
@@ -185,7 +187,7 @@ Phased implementation will take too long to implement.
 
 ---
 
-##### The Agile Software Development Approach
+<ins>The Agile Software Development Approach</ins>
 
 | Question | Sample Explanation |
 |----------|--------------------|
@@ -198,5 +200,36 @@ Phased implementation will take too long to implement.
 
 ![image](https://github.com/user-attachments/assets/ff3aeb3c-fcdb-49a9-9ec9-7068c5b74aa8)
 
+<ins>Development Approach</ins> 
 
+A **Wagile** approach to development would be implemented for PortalHSC due to the its balance of structure, planning and flexibility in time-restrained projects. 
+
+The WAgile development process is the most efficient choice for PortalHSC project, as it combines the structured planning of Waterfall with the flexibility of Agile. This hybrid model allows for clear documentation and requirement definition, which is ideal for meeting the client's standards (school project) whilst also supporting iterative devleopment and feedback during implemenation. WAgile ensures the project stays organised yet adaptable, making it well-sstuied for our solo developer team with fixed deadlines and evolving feature needs. 
+
+
+#### Scheduling and Task allocation 
+![image](https://github.com/user-attachments/assets/7050220e-63b3-439b-aca9-8f9b3474e8bd)
+
+#### Collaboration Tools
+
+| Tool           | Description                                                   | Screenshot                |
+|----------------|---------------------------------------------------------------|---------------------------|
+| Visual Studio Code | A lightweight code editor used for writing and managing source code. |  |
+| GitHub             | A platform for version control and collaboration using Git.   |  |
+| Flask              | A Python web framework used to develop the PWA backend.       |  |
+| Chrome DevTools    | Browser tools for debugging and testing web applications.     | |
+| Lucidchart         | A diagramming tool used to plan system architecture and workflows.     |   |
+
+#### Social and Ethic aspects of software enginering projects
+
+<ins>Privacy</ins>
+<ins>Security</ins>
+<ins>Fairness</ins>
+<ins>Intellectual Property</ins>
+<ins>Accessibility and inclusivity</ins>
+<ins>Collaboration</ins>
+<ins>Transparency</ins>
+<ins>Feedback</ins>
+
+#### Quality Assurance
 
