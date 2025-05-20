@@ -152,7 +152,7 @@ A description of a veriety of different tools used during the production and imp
 
 #### Software implementation methods. 
 
-***Pilot** implementation involves rolling out the new system to a small, manageable group of users before a full-scale implementation. This method allows organisations to identify any issues or necessary adjustments in a controlled environment, reducing the risk of widespread problems.
+**Pilot** implementation involves rolling out the new system to a small, manageable group of users before a full-scale implementation. This method allows organisations to identify any issues or necessary adjustments in a controlled environment, reducing the risk of widespread problems.
 
 A pilot implementation is beneficial as by letting the tutoring portal be tested by a small group first, they can help identify and fix issues without wasting other students' time potentially dealing with a flawed system. Once the group and developer are satisfied with the solutoin, then it may be distrubited amongst the student body as a complete package, either immediately replacing the old system or filling in the digital gap within HopeHSC. 
 
@@ -218,18 +218,88 @@ The WAgile development process is the most efficient choice for PortalHSC projec
 | GitHub             | A platform for version control and collaboration using Git.   |  |
 | Flask              | A Python web framework used to develop the PWA backend.       |  |
 | Chrome DevTools    | Browser tools for debugging and testing web applications.     | |
-| Lucidchart         | A diagramming tool used to plan system architecture and workflows.     |   |
+| Lucidchart         | A diagramming tool used to plan system architecture and workflows.     |
+|
 
 #### Social and Ethic aspects of software enginering projects
 
 <ins>Privacy</ins>
+
+Data required by the client from each student will involve:
+-Student Name
+-School
+-Parent Email
+-Student Email
+-Parent Phone Number
+-Student Mobile Number
+
+
+Data required by the client from each tutor will involve:
+- Tutor Name
+- Tutor Email
+- Tutor Mobile
+
+Privacy is essential when handling student information such as names, emails, and homework submissions. All data will be stored securely and not shared with third parties. 
+
 <ins>Security</ins>
-<ins>Fairness</ins>
-<ins>Intellectual Property</ins>
-<ins>Accessibility and inclusivity</ins>
-<ins>Collaboration</ins>
+
+The issue of security applies to the process of homework submissions and account login. To prevent common threats like cross-site scripting (XSS) and SQL injection, all inputs will be validated and sanitised. Addtionally, passwords will be hashed and HTTPS will be used to encrpt data in transit. Homework submission will also be limited to PDF. 
+
+
+<ins>Accessibility and Inclusivity</ins>
+Accesibility ensures all students can use the portal regardless of ability. THe UI will follow WCAG guidelines  by using proper colour contrast, alt test for imags, and keyboard navigation. 
+
 <ins>Transparency</ins>
+Transparency means users should know how the platform works and what it does with their data. A clear “How it works” section will explain features such as homework tracking, feedback systems, and how logins are handled.
+
+<ins>Fairness</ins>
+
+Fairness ensurs that our software does not discriminate against any group or individual. Featurs such as homework feedback, class details and resource access etc. must be equally avaliagle to all users regardless of their backgroud and avoid biases in its functionality.
+
+<ins>Intellectual Property</ins>
+The platform will respect intellectual property laws by using only open-source assets. Any third-party frameworks and libaries used(e.g. Bootstrap, Flask) will be  attributed and licensed. Tutors uploading content will agree not to upload copyrighted material without permission. 
+
+<ins>Collaboration</ins>
+Collaboration between the client, our developers and the clients' students is essential in building a successful solutoin. Regular feedback from tutors during development would help align features with real needs, such as homework return systems. 
+
 <ins>Feedback</ins>
+PortalHSC wil include a feedback form that allows students and tutors to report bugs or suggest improvements. This feedback will be reviewed reguarly, and the information gathered will be used to plan future updates. Feedback encourages a user-focused proces of development and ensurs the platform continutes to improve.
+
+
+
+
 
 #### Quality Assurance
+
+|Quality Criteria | Explanation                                                  |
+|-----------------|--------------------------------------------------------------|
+|Google Lighthouse|Google Lighthouse is an automated tool developed by Google that analyses web pages and generates a score from 0 to 100 based on various factors like performance, accessibility, best practices, SEO and PWA. An ideal score is anywhere from 90-100.|
+|Response Timme   | The software should respond to all user requests in a time of less than 3 seconds|
+|Interoperability |
+
+
+| Quality Criteria         | Description                                                                 |
+|--------------------------|-----------------------------------------------------------------------------|
+|Google Lighthouse|Google Lighthouse is an automated tool developed by Google that analyses web pages and generates a score from 0 to 100 based on various factors like performance, accessibility, best practices, SEO and PWA. An ideal score is anywhere from 90-100.|
+| Responsiveness           | The interface should work seamlessly on mobile, tablet, and desktop devices. |
+| Accessibility Compliance | Meets WCAG 2.1 Level AA guidelines for accessibility.                      |
+| Ease of Navigation       | Users can access any feature within 2–3 clicks from the homepage.          |
+| Minimal Load Time        | Pages should load in under 2 seconds on a standard connection.             |
+
+#### Compliace and Legislative Requirements
+
+| Compliance or Legislative Issue                  | Methods for Mitigation                                                                 |
+|--------------------------------------------------|----------------------------------------------------------------------------------------|
+| Privacy Act 1988 (Cth)                           | Collect only necessary user data, display a clear privacy policy, obtain user consent before data collection, and ensure data is securely stored and not shared without permission. |
+| Privacy and Personal Information Protection Act 1998 (NSW) | Implement access controls, limit data visibility to relevant users (e.g., tutors can only see their students), and encrypt sensitive information. |
+| Spam Act 2003 (Cth)                              | Ensure that any communications (e.g., reminders or announcements) include consent and an option to opt out. |
+| Copyright Act 1968 (Cth)                         | Use only licensed or original materials (e.g., icons, past paper content), and credit sources when required. |
+| Australian Consumer Law                          | Provide accurate, non-misleading descriptions of the PWA's features, especially if a payment component (e.g., invoicing) is integrated. |
+| ISO/IEC 27001 (Information Security Management)  | Follow industry best practices for information security: implement strong password rules, use HTTPS, and conduct regular security audits. |
+
+
+
+#### System Modelling
+
+
 
