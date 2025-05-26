@@ -8,14 +8,21 @@ app = Flask(__name__)
 def home():
     return render_template('index.html', title = 'Home')
 
+@app.route('/invoices')
+def invoices():
+    return render_template('invoices.html', title = 'Invoices')
 
+@app.route('/homework')
+def homework():
+    return render_template('homework.html', title='Homework')
 
+@app.route('/questions')
+def questions():
+    return render_template('questions.html', title='Questions')
 
-
-@app.route('/hello/<name>')
-def hello(name=None):
-    return render_template('hello.html', person=name, title='hi')
-
+@app.route('/settings')
+def settings():
+    return render_template('settings.html', title='Settings')
 
 # main driver function
 if __name__ == '__main__':
