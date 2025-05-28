@@ -1,4 +1,40 @@
 {% extends "layout.html" %}
-    {% block content %}
-        ....
+{% block content %}
+    <div class="wrapper">
+
+      <!-- Page Content -->
+      <div id="content">
+
+        <!-- Invoice Table -->
+        
+        <div class="row">
+            <div class="col-xl-12">
+            <div class="card card-header-actions mb-4">
+                <div class="card-header">
+                Invoices
+                </div>
+                <div class="card-body p-0">
+                <div class="table-responsive table-billing-history">
+                    <table class="table table-hover mb-0">
+                    <thead>
+                        <tr>
+                        <th scope="col">Invoice Number</th>
+                        <th scope="col">Issue Date</th>
+                        <th scope="col">Due Date</th>
+                        <th scope="col">Amount Due</th>
+                        <th scope="col">View</th>
+                        <th scope="col">Pay</th>
+                        </tr>
+                    </thead>
+                    <tbody id="invoice-table"><tr><td>129299</td><td>05/05/2025</td><td>09/06/2025</td><td>$892.00</td><td><a href="/invoice/129299">View</a></td><td><a class="btn-pay" href="#" onclick="window.open('/transfer/129299', '_blank')">Pay</a></td></tr></tbody>
+                    </table>
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <!-- Receipts -->
+      </div>
+    </div>
 {% endblock %}

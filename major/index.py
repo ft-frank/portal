@@ -4,9 +4,9 @@ from flask_bootstrap import Bootstrap5
 app = Flask(__name__)
 
 @app.route('/')
-
 def home():
-    return render_template('index.html', title = 'Home')
+    return render_template('home.html', title = 'Home')
+
 
 @app.route('/invoices')
 def invoices():
@@ -15,6 +15,10 @@ def invoices():
 @app.route('/homework')
 def homework():
     return render_template('homework.html', title='Homework')
+
+@app.route('/hw_solutions')
+def hw_solutions():
+    return render_template('solutions.html', title='HomeworkSolutions')
 
 @app.route('/questions')
 def questions():

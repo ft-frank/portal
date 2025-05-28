@@ -1,263 +1,71 @@
-<!DOCTYPE html>
-<head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="description" content="">
-        <meta name="author" content="">
-        <title>Home</title>
-        <link href="/static/styles.css" rel="stylesheet">
-        <link rel="icon" type="image/x-icon" href="assets/img/favicon.png">
-        <link rel="stylesheet" type="text/css" href="/static/fa6/css/all.css">
-        <link href="https://cdn.jsdelivr.net/gh/hung1001/font-awesome-pro@0ac23ca/css/all.css" rel="stylesheet" type="text/css">
-        
-        <script src="/static/feather.min.js" crossorigin="anonymous"></script>
-        
-        <style type="text/css">
-            .open, .edit, .delete, .hoverable {
-                cursor: pointer;
-            }
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="static/styles.css">
+  </head>
+  <body>
 
-            #accordionSidenav > a > div {
-                flex-basis: 25px; /* prevents sidebar link icons from misaligning text */
-            }
-        </style>
-        
-  <style>
-    /* Required for announcements w/ different font sizes to render properly */
-    .ql-size-small {
-      font-size: .75em
-    }
-    .ql-size-large {
-      font-size: 1.3em
-    }
-    .ql-size-huge {
-      font-size: 1.8em
-    }
-  </style>
+    <div class="wrapper">
+      <!-- Sidebar -->
+      <nav id="sidebar" class="sidebar">
+        <div id = 'buffer' ></div>
+        <div class="sidebar-category">PAGES</div>
+        <ul class="list-unstyled components">
+          <li class="active">
+            <a href="/"><i class="bi bi-house-door"></i> Home</a>
+          </li>
+          <li>
+            <a href="/invoices"><i class="bi bi-file-text"></i> Invoices</a>
+          </li>
+        </ul>
 
-  
-  
-    </head>
+        <div class="sidebar-category">MY WORK</div>
+        <ul class="list-unstyled components">
+          <li>
+            <a href="/questions"><i class="bi bi-question-circle"></i> Question Bank</a>
+          </li>
+          <li>
+            <a href="/hw_solutions"><i class="bi bi-journal-check"></i> Homework Solutions</a>
+          </li>
+        </ul>
 
-<body class="nav-fixed">
-        <nav class="topnav navbar navbar-expand border-bottom justify-content-between justify-content-sm-start navbar-light bg-white" id="sidenavAccordion">
-            <button class="btn btn-icon btn-transparent-dark order-lg-0 mr-lg-2" id="sidebarToggle"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
-            
-            <a class="navbar-brand" href="/">
-            Ngo and Sons
-            </a>
-            <ul class="navbar-nav align-items-center ml-auto">
-                
-            </ul>
-        </nav>
-        <div id="layoutSidenav">
-            <div id="layoutSidenav_nav">
-                <nav class="sidenav border-right sidenav-light">
-    <div class="sidenav-menu">
-        <div class="nav accordion" id="accordionSidenav">
-            <!-- Sidenav Menu Heading (Account)-->
-            <!-- * * Note: * * Visible only on and above the sm breakpoint-->
-            <div class="sidenav-menu-heading d-sm-none">Account</div>
-            <!-- Sidenav Link (Alerts)-->
-            <!-- * * Note: * * Visible only on and above the sm breakpoint-->
-            
-            <div class="sidenav-menu-heading">Pages</div>
-            <a class="nav-link active" href="/">
-                <div class="nav-link-icon"><i class="fas fa-home"></i></div>
-                Home
-            </a>
-            <a class="nav-link" href="/invoices">
-                <div class="nav-link-icon"><i class="fas fa-file-invoice"></i></div>
-                Invoices
-            </a>
+        <div class="sidebar-category">MY CLASSES</div>
+        <ul class="list-unstyled components">
+          <li>
+            <a href="/homework"><i class="bi bi-book"></i>Class 1</a>
+          </li>
+          <li>
+            <a href="#"><i class="bi bi-book"></i>Class 2</a>
+          </li>
+        </ul>
 
-            <div class="sidenav-menu-heading">My Work</div>
+        <div class="sidebar-category">ACCOUNT</div>
+        <ul class="list-unstyled components">
+          <li>
+            <a href="/settings"><i class="bi bi-gear"></i> Settings</a>
+          </li>
+          <li>
+            <a href='#'><i class="bi bi-box-arrow-right"></i> Logout</a>
+          </li>
+        </ul>
+      </nav>
 
-            <a class="nav-link" href="/homework">
-                <div class="nav-link-icon"><i class="fas fa-file-lines"></i></div>
-                Homework Uploads
-            </a>
-            <a class="nav-link" href="/qbank">
-                <div class="nav-link-icon"><i class="fas fa-box-archive"></i></div>
-                Question Bank
-            </a>
-            <a class="nav-link" href="/hw_solutions">
-                <div class="nav-link-icon"><i class="fas fa-file-lines"></i></div>
-                Homework Solutions
-            </a>
-            <a class="nav-link" href="/class_recordings">
-                <div class="nav-link-icon"><i class="fas fa-video"></i></div>
-                Missed Class Recordings
-            </a>
+      {% block content %} {% endblock %}
+   
+       
 
-            <div class="sidenav-menu-heading">My Classes</div>
-
-            
-            <a class="nav-link" href="/class/1531">
-                <div class="nav-link-icon"><i class="fas fa-book-open"></i></div>
-                Yr 12 3U Wed Cabramatta
-            </a>
-            
-            <a class="nav-link" href="/class/1941">
-                <div class="nav-link-icon"><i class="fas fa-book-open"></i></div>
-                Yr 12 4U Wed Cabramatta
-            </a>
-            
-            
-            <div class="sidenav-menu-heading">Account</div>
-            
-            <a class="nav-link" href="/profile">
-                <div class="nav-link-icon"><i class="fas fa-cog"></i></div>
-                Settings
-            </a>
-            <a class="nav-link" href="/logout">
-                <div class="nav-link-icon"><i class="fas fa-user"></i></div>
-                Logout
-            </a>
-        </div>
-    </div>
-    
-</nav>
-            </div>
-            <div id="layoutSidenav_content">
-                <main>
-                    
-  <header class="page-header page-header-dark bg-gradient-primary-to-secondary">
-    <div class="container-xl px-4">
-      <div class="page-header-content pt-4">
-        <div class="row align-items-center justify-content-between">
-          <div class="col-auto mt-4">
-            <h1 class="page-header-title">
-              <div class="page-header-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg></div>
-              Welcome Frank Tran
-            </h1>
-            <div class="page-header-subtitle">Ngo and Sons Student Portal</div>
-            <div class="page-header-subtitle">
-              It is currently Term 2 Week 8.
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <div class="container-xl px-4 mt-4">
-    <div class="row">
-      <div class="col-lg-6 col-xl-3 mb-4">
-        <div class="card bg-primary text-white h-100">
-          <div class="card-body">
-            <div class="d-flex justify-content-between align-items-center">
-              <div class="me-3">
-                <div class="text-white-75 small">Student ID</div>
-                <div class="text-lg fw-bold">13009</div>
-              </div>
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user feather-xl text-white-50"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-            </div>
-          </div>
-          <div class="card-footer d-flex align-items-center justify-content-between small">
-            <a class="text-white stretched-link" href="/profile">View Profile</a>
-            <div class="text-white"><i class="fas fa-angle-right"></i></div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-6 col-xl-3 mb-4">
-        <div class="card bg-warning text-white h-100">
-          <div class="card-body">
-            <div class="d-flex justify-content-between align-items-center">
-            <div class="me-3">
-              <div class="text-white-75 small">Unpaid Fees</div>
-              <div class="text-lg fw-bold">$892.00</div>
-            </div>
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-dollar-sign feather-xl text-white-50"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
-            </div>
-          </div>
-          <div class="card-footer d-flex align-items-center justify-content-between small">
-            <a class="text-white stretched-link" href="/invoices">View Invoices</a>
-            <div class="text-white"><i class="fas fa-angle-right"></i></div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-6 col-xl-3 mb-4">
-        <div class="card bg-success text-white h-100">
-          <div class="card-body">
-            <div class="d-flex justify-content-between align-items-center">
-              <div class="me-3">
-                <div class="text-white-75 small">Sit your Online Exams</div>
-                <div class="text-lg fw-bold">Online Exams</div>
-              </div>
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-square feather-xl text-white-50"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
-            </div>
-          </div>
-          <div class="card-footer d-flex align-items-center justify-content-between small">
-            <a class="text-white stretched-link" href="/exams">View Exams</a>
-            <div class="text-white"><i class="fas fa-angle-right"></i></div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-6 col-xl-3 mb-4">
-        <div class="card bg-secondary text-white h-100">
-          <div class="card-body">
-            <div class="d-flex justify-content-between align-items-center">
-              <div class="me-3">
-                <div class="text-white-75 small">Student Loyalty Programme</div>
-                <div class="text-lg fw-bold">Student Card</div>
-              </div>
-              <i class="text-white-50 fa-solid fa-2x fa-id-card"></i>
-            </div>
-          </div>
-          <div class="card-footer d-flex align-items-center justify-content-between small">
-            <a class="text-white stretched-link" href="/card">View</a>
-            <div class="text-white"><i class="fas fa-angle-right"></i></div>
-          </div>
-        </div>
-      </div>
-      <div class="col-12 mb-4">
-        <div class="card bg-dark text-white h-100">
-          <div class="card-header text-lg d-flex align-items-center justify-content-between">
-            Announcements
-            <i class="text-white-50 fa-solid fa-bullhorn"></i>
-          </div>
-          <div class="card-body" id="announcements">
-            
-            
-              <div class="card bg-dark text-white">
-                <div class="card-header">No announcements available</div>
-              </div>
-            
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-                </main>
-            </div>
-        </div>
-        <script src="/static/jquery.min.js" crossorigin="anonymous"></script>
-        <script src="/static/bootstrap/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-        <!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>-->
-        <script src="/static/scripts.js"></script>
-        <script src="/static/bootbox/bootbox.min.js"></script>
-        <link href="/static/bower_components/bootstrap-notify/animate.min.css" rel="stylesheet">
-        <script src="/static/bower_components/bootstrap-notify/bootstrap-notify.min.js"></script>
-        <script>
-    function success_notif(text, style="success") {
-      $.notify({
-          message: text 
-      },{
-          type: style,
-          placement: {
-              from: "bottom",
-              align: "right"
-          },
-        });
-    }
-    
-</script>
-        
-
-    
-</body>
-
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="static/script.js"></script>
+  </body>
 </html>

@@ -1,0 +1,108 @@
+
+{% extends "layout.html" %}
+{% block content %}
+    <div class="wrapper">
+
+      <!-- Page Content -->
+      <div id="content">
+        <!-- Welcome Header -->
+        <div class="welcome-header">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-12">
+                <div class="welcome-content">
+                  <h1><i class="bi bi-activity"></i> Welcome Frank Tran</h1>
+                  <p>HopeHSC Student Portal</p>
+                  <p>It is currently {{date}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dashboard Cards -->
+        <div class="container-fluid dashboard">
+          <div class="row">
+            <!-- Student ID Card -->
+            <div class="col-md-6 col-lg-3 mb-4">
+              <div class="card info-card student-card">
+                <div class="card-body">
+                  <h5 class="card-title">Student ID</h5>
+                  <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                      <i class="bi bi-person"></i>
+                    </div>
+                    <div class="ps-3">
+                      <h6 class="card-value">13009</h6>
+                    </div>
+                  </div>
+                  <div class="card-link mt-3">
+                    <a href="#" class="btn-link">View Profile <i class="bi bi-chevron-right"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Unpaid Fees Card -->
+            <div class="col-md-6 col-lg-3 mb-4">
+              <div class="card info-card fees-card">
+                <div class="card-body">
+                  <h5 class="card-title">Unpaid Fees</h5>
+                  <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                      <i class="bi bi-currency-dollar"></i>
+                    </div>
+                    <div class="ps-3">
+                      <h6 class="card-value">Price</h6>
+                    </div>
+                  </div>
+                  <div class="card-link mt-3">
+                    <a href="#" class="btn-link">View Invoices <i class="bi bi-chevron-right"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Student Card -->
+            <div class="col-md-6 col-lg-3 mb-4">
+              <div class="card info-card loyalty-card">
+                <div class="card-body">
+                  <h5 class="card-title">Student Loyalty Programme</h5>
+                  <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                      <i class="bi bi-credit-card"></i>
+                    </div>
+                    <div class="ps-3">
+                      <h6 class="card-value">Student Card</h6>
+                    </div>
+                  </div>
+                  <div class="card-link mt-3">
+                    <a href="#" class="btn-link">View <i class="bi bi-chevron-right"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Announcements Section -->
+          <div class="row">
+            <div class="col-12">
+              <div class="card announcements-card">
+                <div class="card-header d-flex align-items-center">
+                  <h4 class="card-title mb-0">Announcements</h4>
+                  <div class="ms-auto">
+                    <i class="bi bi-megaphone"></i>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <div class="announcement-item">
+                    <p class="text-muted">No announcements available</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+{% endblock %}
