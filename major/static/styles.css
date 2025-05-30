@@ -18,6 +18,7 @@
   --loyalty-card-color: #6f42c1;
   --sidebar-bg: #f8f9fa;
   --sidebar-active: #e9ecef;
+  --header-bg: #ffffff;
 }
 
 body {
@@ -25,17 +26,37 @@ body {
   background-color: #f0f2f5;
   color: #333;
   min-height: 100vh;
+  padding-top: 0px; /* Add padding for fixed header */
+}
+
+/* Header Styles */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background-color: var(--header-bg);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  z-index: 1000;
+}
+
+.header-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--dark-color);
+  margin-left: 60px; /* Space for sidebar toggle button */
 }
 
 /* Wrapper */
 .wrapper {
-
   display: flex;
-  width: 100vw; /* Full viewport width */
-  margin: 0;
-  padding: 0;
+  width: 100%;
+  align-items: stretch;
 }
-
 
 /* Sidebar Styles */
 .sidebar {
@@ -45,9 +66,9 @@ body {
   color: #333;
   transition: all 0.3s;
   border-right: 1px solid rgba(0, 0, 0, 0.1);
-  height: 100vh;
+  height: calc(100vh - 60px); /* Adjust for header */
   position: fixed;
-  top: 0;
+  top: 60px; /* Position below header */
   left: -250px;
   overflow-y: auto;
   z-index: 999;
@@ -57,7 +78,11 @@ body {
   left: 0;
 }
 
-
+.sidebar-header {
+  padding: 20px;
+  background: var(--primary-color);
+  color: white;
+}
 
 .sidebar-category {
   font-size: 0.75rem;
@@ -96,10 +121,6 @@ body {
   padding: 0 0 16px 0;
 }
 
-#buffer {
-  height:50px;
-}
-
 /* Content Styles */
 #content {
   width: 100%;
@@ -107,6 +128,7 @@ body {
   transition: all 0.3s;
   background-color: #f0f2f5;
   margin-left: 0;
+  margin-top: 60px; /* Add margin for header */
 }
 
 #content.expanded {
@@ -247,7 +269,7 @@ body {
 
 .announcements-card .card-header {
   background-color: #343a40;
-  color: white;
+  color:white;
   border-bottom: none;
   border-radius: 8px 8px 0 0;
   padding: 16px 20px;
@@ -267,8 +289,22 @@ body {
   border-bottom: none;
 }
 
+.card-header{
+  color:var(--primary-color);
+  font-weight: bold;    
+  
 
-/* Tables and Rows */
+}
+
+.card{
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+.row-heading{
+  color:gray;
+}
+
 
 
 /* Responsive Styles */

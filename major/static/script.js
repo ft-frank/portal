@@ -2,8 +2,8 @@ document.addEventListener('DOMContentLoaded', function() {
   // Toggle sidebar
   const sidebarToggle = document.createElement('button');
   sidebarToggle.classList.add('btn', 'btn-outline-secondary', 'position-fixed');
-  sidebarToggle.style.top = '10px';
-  sidebarToggle.style.left = '10px';
+  sidebarToggle.style.top = '12px';
+  sidebarToggle.style.left = '15px';
   sidebarToggle.style.zIndex = '1001';
   sidebarToggle.innerHTML = '<i class="bi bi-list"></i>';
   document.body.appendChild(sidebarToggle);
@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Example function to update current term and week
   window.updateTermInfo = function(term, week) {
     const termInfoElement = document.querySelector('.welcome-content p:last-child');
-    termInfoElement.textContent = `HopeHSC Student Portal It is currently Term ${term} Week ${week}.`;
+    termInfoElement.textContent = `It is currently Term ${term} Week ${week}.`;
   };
 
   // Display current date in a more user-friendly format
