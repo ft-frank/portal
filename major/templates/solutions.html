@@ -1,4 +1,49 @@
 {% extends "layout.html" %}
-    {% block content %}
-        ....
+
+{% block title %}
+  <title>Homework Solutions</title>
+{% endblock %}
+
+{% block content %}
+<div class = 'wrapper'>
+    <div id = 'content'>
+        <nav class="page-header">
+                
+            <span class="navbar-text">
+                Homework Solutions
+            </span>
+        </nav>
+        <div class="container px-4 my-4">
+            <div class="card">
+                <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-borderless mb-0">
+                    <thead class="border-bottom">
+                        <tr class="small text-uppercase">
+                        <th scope="col">Title</th>
+                        <th scope="col">Expiry</th>
+                        <th class="text-end" scope="col">View</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                            <tr class="border-bottom">
+                            <td>
+                                <div class = 'text-muted'>Area and Volume</div>
+                            </td>
+                            <td>
+                                <div class = 'text-muted'>2/6/2</div>
+                            </td>
+                            <td class="text-end">
+                                <a href="/qbank/topic?t=Area and Volume" class="btn btn-sm btn-light">View Topic</a>
+                            </td>
+                            </tr>
+                        
+                    </tbody>
+                    </table>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}

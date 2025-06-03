@@ -16,8 +16,8 @@
   --fees-card-color: #fd7e14;
   --exams-card-color: #198754;
   --loyalty-card-color: #6f42c1;
-  --sidebar-bg: #f8f9fa;
-  --sidebar-active: #e9ecef;
+  --sidebar-bg: #ffffff;
+  --sidebar-active: #ffffff;
   --header-bg: #ffffff;
 }
 
@@ -26,7 +26,7 @@ body {
   background-color: #f0f2f5;
   color: #333;
   min-height: 100vh;
-  padding-top: 0px; /* Add padding for fixed header */
+  padding-top: 0px; 
 }
 
 /* Header Styles */
@@ -37,18 +37,19 @@ body {
   right: 0;
   height: 60px;
   background-color: var(--header-bg);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
   display: flex;
   align-items: center;
   padding: 0 20px;
   z-index: 1000;
+  border-bottom: 1px solid #e0e5ec !important;
 }
 
 .header-title {
   font-size: 1.5rem;
   font-weight: 600;
   color: var(--dark-color);
-  margin-left: 60px; /* Space for sidebar toggle button */
+  margin-left: 60px; 
 }
 
 /* Wrapper */
@@ -66,9 +67,9 @@ body {
   color: #333;
   transition: all 0.3s;
   border-right: 1px solid rgba(0, 0, 0, 0.1);
-  height: calc(100vh - 60px); /* Adjust for header */
+  height: calc(100vh - 60px); 
   position: fixed;
-  top: 60px; /* Position below header */
+  top: 60px; 
   left: -250px;
   overflow-y: auto;
   z-index: 999;
@@ -238,25 +239,6 @@ body {
   color: white;
 }
 
-.exams-card {
-  background: linear-gradient(to right, var(--exams-card-color), #28a745);
-  color: white;
-}
-
-.exams-card .card-icon {
-  background: rgba(255, 255, 255, 0.2);
-  color: white;
-}
-
-.loyalty-card {
-  background: linear-gradient(to right, var(--loyalty-card-color), #9c6ade);
-  color: white;
-}
-
-.loyalty-card .card-icon {
-  background: rgba(255, 255, 255, 0.2);
-  color: white;
-}
 
 /* Announcements Card */
 .announcements-card {
@@ -292,17 +274,53 @@ body {
 .card-header{
   color:var(--primary-color);
   font-weight: bold;    
-  
 
 }
+
+
+/* Invoices */
 
 .card{
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-
 .row-heading{
   color:gray;
+}
+
+
+/* Question Bank */
+
+.px-4 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  margin-bottom:1.5rem;
+  margin-top:1.5rem;
+
+
+}
+
+.small{
+  text-align:left;
+
+
+  
+}
+
+
+/* Page Header */
+
+.page-header{
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background-color: var(--header-bg);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  z-index: 1000;
 }
 
 
@@ -322,3 +340,7 @@ body {
     font-size: 1.5rem;
   }
 }
+
+
+
+    
