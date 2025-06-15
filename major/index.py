@@ -14,13 +14,13 @@ app.config['SECRET_KEY'] = 'thisisasecretkey'
 db = SQLAlchemy(app)
 bcrypt = Bcrypt(app)
 
-# login_manager = LoginManager()
-# login_manager.init.app(app)
-# login_manager.login_view = "login"
+login_manager = LoginManager()
+login_manager.init_app(app)
+login_manager.login_view = "login"
 
-# @login_manager.user_loader
-# def load_user(user_id):
-#     return User.query.get(int(user_id))
+@login_manager.user_loader
+def load_user(user_id):
+    return User.query.get(int(user_id))
 
 # Databases
 
@@ -106,16 +106,11 @@ class RegisterForm(FlaskForm):
 
     submit = SubmitField("Register")
 
-    def validate_email_emailaddress(self,email):
-        existing_email_emailaddress = User.query.filter_by(
-            email=email.data).first()
-        
-        
-        if existing_email_emailaddress:
-            raise ValidationError(
-                "That Email is already in use. Please use a different one"
-            )
-        
+    def validate_email(self, email):
+        existing_user = User.query.filter_by(email=email.data).first()
+        if existing_user:
+            raise ValidationError("That email is already in use. Please use a different one.")
+
 class LoginForm(FlaskForm):
     email = StringField(
         validators=[InputRequired(), Length(min=5, max=50)],
@@ -133,19 +128,26 @@ class LoginForm(FlaskForm):
 
 
 @app.route('/')
+@login_required
 def home():
     return render_template('home.html', title = 'Home', current_page = 'home')
 
-@app.route('/login')
+@app.route('/login', methods = ['GET', 'POST'])
 def login():
     form = LoginForm()
     if form.validate_on_submit():
-        user = user.query.filter_by(email = form.email.data).first()
+        user = User.query.filter_by(email = form.email.data).first()
         if user:
             if bcrypt.check_password_hash(user.password, form.password.data):
+                login_user(user)
                 return redirect(url_for('home'))
-
     return render_template('login.html', title = 'Login', current_page = 'login', form = form)
+
+@app.route('/logout', methods = ['GET', 'POST'])
+@login_required
+def logout():
+    logout_user()
+    return redirect(url_for('login'))
 
 @app.route('/register', methods = ['GET', 'POST'])
 def register():
@@ -158,22 +160,27 @@ def register():
     return render_template('register.html', title = 'Register', current_page = 'register', form = form)
 
 @app.route('/invoices')
+@login_required
 def invoices():
     return render_template('invoices.html', title = 'Invoices', current_page = 'invoices')
 
 @app.route('/homework')
+@login_required
 def homework():
     return render_template('homework.html', title='Homework', current_page = 'homework')
 
 @app.route('/hw_solutions')
+@login_required
 def hw_solutions():
     return render_template('solutions.html', title='HomeworkSolutions', current_page = 'hw_solutions')
 
 @app.route('/questions')
+@login_required
 def questions():
     return render_template('questions.html', title='Questions', current_page = 'questions')
 
 @app.route('/settings')
+@login_required
 def settings():
     return render_template('settings.html', title='Settings', current_page = 'settings')
 
