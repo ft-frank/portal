@@ -1,5 +1,14 @@
 {% extends "layout.html" %}
 
+
+{% block description %}
+
+  <meta
+  name="description"
+  content="A page where you can hand in homework, check grades and receive feedback">
+
+{% endblock %}
+
 {% block title %}
     <title>Class 1</title>
 {% endblock %}
@@ -20,9 +29,8 @@
 
         <div class="container px-4 mt-4">
             <nav class="nav nav-borders">
-            <a class="nav-link ml-0" href="/class/1531">Class Page</a>
-            <a class="nav-link active ml-0" href="/class/1531/homework">Class Homework</a>
-            <a class="nav-link ml-0" href="/class/1531/marks">Class Marks</a>
+            <a class="nav-link ml-0" href="/class/1531">Class Homework</a>
+            <a class="nav-link active ml-0" href="/class/1531/homework">Feedback</a>
             </nav>
             <hr class="mt-0 mb-4">
             <div class="card">

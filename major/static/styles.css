@@ -75,6 +75,13 @@ body {
   z-index: 999;
 }
 
+/* .active {
+    color: blue;
+    background-color: var(--primary-color); 
+    font-weight: bold;
+} */
+
+
 .sidebar.active {
   left: 0;
 }
@@ -177,7 +184,7 @@ body {
 .card-title {
   font-size: 0.9rem;
   font-weight: 600;
-  color: #6c757d;
+  color: #fff;
   margin-bottom: 16px;
 }
 

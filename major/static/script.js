@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
   sidebarToggle.style.left = '15px';
   sidebarToggle.style.zIndex = '1001';
   sidebarToggle.innerHTML = '<i class="bi bi-list"></i>';
+  sidebarToggle.setAttribute('aria-label', 'Toggle Sidebar')
   document.body.appendChild(sidebarToggle);
 
   const sidebar = document.getElementById('sidebar');

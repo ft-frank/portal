@@ -7,6 +7,8 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {% block description%}
+    {% endblock %}
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons -->
@@ -26,20 +28,20 @@
     
         <div class="sidebar-category">PAGES</div>
         <ul class="list-unstyled components">
-          <li class="active">
+          <li class="{% if current_page == 'home' %}active{% endif %}">
             <a href="/"><i class="bi bi-house-door"></i> Home</a>
           </li>
-          <li>
+          <li class = "{% if current_page == 'invoices' %}active{% endif %}">
             <a href="/invoices"><i class="bi bi-file-text"></i> Invoices</a>
           </li>
         </ul>
 
         <div class="sidebar-category">MY WORK</div>
         <ul class="list-unstyled components">
-          <li>
+          <li class = "{% if current_page == 'questions' %}active{% endif %}">
             <a href="/questions"><i class="bi bi-question-circle"></i> Question Bank</a>
           </li>
-          <li>
+          <li class = "{% if current_page == 'hw_solutions' %}active{% endif %}">
             <a href="/hw_solutions"><i class="bi bi-journal-check"></i> Homework Solutions</a>
           </li>
         </ul>
@@ -56,7 +58,7 @@
 
         <div class="sidebar-category">ACCOUNT</div>
         <ul class="list-unstyled components">
-          <li>
+          <li class="{% if current_page == 'settings' %}active{% endif %}">
             <a href="/settings"><i class="bi bi-gear"></i> Settings</a>
           </li>
           <li>
