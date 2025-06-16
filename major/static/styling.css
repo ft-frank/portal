@@ -1,0 +1,49 @@
+/* Global Styles */
+:root {
+  /* Color Variables */
+    --primary-color: #0d6efd;
+    --primary-dark: #0a58ca;
+    --secondary-color: #6c757d;
+    --success-color: #198754;
+    --warning-color: #ffc107;
+    --danger-color: #dc3545;
+    --info-color: #0dcaf0;
+    --light-color: #f8f9fa;
+    --dark-color: #212529;
+  
+  /* Student Portal Colors */
+    --student-card-color: #0d6efd;
+    --fees-card-color: #fd7e14;
+    --exams-card-color: #198754;
+    --loyalty-card-color: #6f42c1;
+    --sidebar-bg: #ffffff;
+    --sidebar-active: #ffffff;
+    --header-bg: #ffffff;
+}
+
+body{
+    background-color: var(--primary-color);
+}
+
+div { align-content: center; }
+
+.card{
+    margin-top: 3rem !important;
+    border-radius:0.5rem !important;
+}
+
+.form_control{
+    display: block;
+    width: 100%;
+    height: calc(1em + 1.75rem + 2px);
+    padding: 0.875rem 1.125rem;
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1;
+    color: #69707a;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #c5ccd6;
+    border-radius: 0.35rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}

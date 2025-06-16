@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect, url_for
+from flask import Flask, render_template, redirect, url_for, flash
 from flask_bootstrap import Bootstrap
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import UserMixin, login_user, LoginManager, login_required, logout_user, current_user
@@ -156,7 +156,12 @@ def register():
         hashed_password = bcrypt.generate_password_hash(form.password.data)
         new_user = User(email=form.email.data, password = hashed_password, role = form.role.data)
         db.session.add(new_user)
-        db.session.commit()
+        db.session.commit() 
+        flash("New Account created succesfully!", "success")
+        flash(f"Their email: {form.email.data}, Their password: {form.password.data}, Their role: {form.role.data}")
+
+    else:
+        flash("An existing account exists with this email.", "danger")
     return render_template('register.html', title = 'Register', current_page = 'register', form = form)
 
 @app.route('/invoices')
