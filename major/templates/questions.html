@@ -19,7 +19,7 @@
         <nav class="page-header">
                 
             <span class="navbar-text">
-                Question Bank
+                Question Bank {{user.class_.name}}
             </span>
         </nav>
         <div class="container px-4 my-4">
@@ -34,14 +34,21 @@
                         </tr>
                     </thead>
                     <tbody>
-                            <tr class="border-bottom">
-                            <td>
-                                <div class = 'text-muted'>Area and Volume</div>
-                            </td>
-                            <td class="text-end">
-                                <a href="/qbank/topic?t=Area and Volume" class="btn btn-sm btn-light">View Topic</a>
-                            </td>
-                            </tr>
+                            {% for question in questions %}
+                                <tr class="border-bottom">
+                                <td>
+                                    <div class="fw-bold text-muted">{{ question.title }}</div>
+                                    <div class="small text-muted d-none d-md-block">—</div>
+                                </td>
+                                <td class="text-end text-muted">
+                                    {% if question.file_path %}
+                                    <a href="{{ url_for('show_questions', filename=question.filename) }}" target="_blank">Show</a>
+                                    {% else %}
+                                    <span class="text-muted">None</span>
+                                    {% endif %}
+                                </td>
+                                </tr>
+                            {% endfor %}
                         
                     </tbody>
                     </table>

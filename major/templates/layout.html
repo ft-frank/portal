@@ -46,21 +46,11 @@
           </li>
         </ul>
 
-        <div class="sidebar-category">MY CLASSES</div>
-        <ul class="list-unstyled components">
-          <li>
-            <a href="/homework"><i class="bi bi-book"></i>Class 1</a>
-          </li>
-          <li>
-            <a href="#"><i class="bi bi-book"></i>Class 2</a>
-          </li>
-        </ul>
-
         <div class="sidebar-category">ACCOUNT</div>
         <ul class="list-unstyled components">
-          <li class="{% if current_page == 'settings' %}active{% endif %}">
+          <!-- <li class="{% if current_page == 'settings' %}active{% endif %}">
             <a href="/settings"><i class="bi bi-gear"></i> Settings</a>
-          </li>
+          </li> -->
           <li>
             <a href='/logout'><i class="bi bi-box-arrow-right"></i> Logout</a>
           </li>
@@ -71,8 +61,6 @@
 
     
       {% block content %} {% endblock %}
-   
-       
 
     <!-- Bootstrap JS Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

@@ -42,9 +42,20 @@
                                             </form>
                                         </div>
                                         <div class="card-footer text-center">
-                                            <div class="small">If you forgot your details email admin</div>
+                                            <div class="small">If you forgot your details email admin at admin@gmail.com</div>
                                         </div>
-                                    </div>
+                                        {% with messages = get_flashed_messages(with_categories=true) %}
+                                            {% if messages %}
+                                                {% for category, message in messages %}
+                                                <div class="alert alert-{{ category }}">
+                                                    {{ message }}
+                                                </div>
+                                                {% endfor %}    
+                                            {% endif %}
+                                        {% endwith %}
+        </div>
+
+        
     </div>
 
 </body>

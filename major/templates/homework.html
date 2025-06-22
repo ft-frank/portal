@@ -1,70 +1,61 @@
 {% extends "layout.html" %}
 
+
 {% block description %}
-  <meta name="description" content="A page where you can hand in homework, check grades and receive feedback">
+
+  <meta
+  name="description"
+  content="The solutions to the formulated set of questions on each topic that will help you succeed">
+
 {% endblock %}
 
 {% block title %}
-  <title>Class 1</title>
+  <title>Homework Solutions</title>
 {% endblock %}
 
 {% block content %}
-<div class="wrapper">
-  <!-- Page Content -->
-  <div id="content">
-    <nav class="page-header">
-      <span class="navbar-text">
-        Year 12 Software Engineering Tuesday 8:30–10:30 PM (Sir Benjamin Clarke)
-      </span>
-    </nav>
-
-    <!-- Homework Section -->
-    <div class="container px-4 mt-4">
-      <nav class="nav nav-borders">
-        <a class="nav-link ml-0" href="/class/1531">Class Homework</a>
-        <a class="nav-link active ml-0" href="/class/1531/homework">Feedback</a>
-      </nav>
-
-      <hr class="mt-0 mb-4">
-
-      <div class="card">
-        <div class="card-body">
-          <div class="table-responsive">
-            <table class="table table-borderless mb-0">
-              <thead class="border-bottom">
-                <tr class="small text-uppercase text-muted">
-                  <th class="text-muted" scope="col">Homework Description</th>
-                  <th class="text-end text-muted" scope="col">Attachment</th>
-                  <th class="text-end text-muted" scope="col">Upload Homework</th>
-                  <th class="text-end text-muted" scope="col">Marked Homework</th>
-                  <th class="text-end text-muted" scope="col">Mark</th>
-                </tr>
-              </thead>
-              <tbody>
-                {% for hw in homeworks %}
-                <tr class="border-bottom">
-                  <td>
-                    <div class="fw-bold text-muted">{{ hw.title }}</div>
-                    <div class="small text-muted d-none d-md-block">—</div>
-                  </td>
-                  <td class="text-end text-muted">
-                    {% if hw.file_path %}
-                      <a href="{{ url_for('uploaded_file', filename=hw.file_path) }}" target="_blank">Download</a>
-                    {% else %}
-                      <span class="text-muted">None</span>
-                    {% endif %}
-                  </td>
-                  <td class="text-end text-muted fw-bold">Not Submittable</td>
-                  <td class="text-end fw-bold">—</td>
-                  <td class="text-end fw-bold">—</td>
-                </tr>
-                {% endfor %}
-              </tbody>
-            </table>
-          </div>
+<div class = 'wrapper'>
+    <div id = 'content'>
+        <nav class="page-header">
+                
+            <span class="navbar-text">
+                {{user.class_.name}}
+            </span>
+        </nav>
+        <div class="container px-4 my-4">
+            <div class="card">
+                <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-borderless mb-0">
+                    <thead class="border-bottom">
+                        <tr class="small text-uppercase">
+                        <th scope="col">Topic</th>
+                        <th class="text-end" scope="col">View</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                            {% for hw in homeworks %}
+                                <tr class="border-bottom">
+                                <td>
+                                    <div class="fw-bold text-muted">{{ hw.title }}</div>
+                                    <div class="small text-muted d-none d-md-block">—</div>
+                                </td>
+                                <td class="text-end text-muted">
+                                    {% if hw.file_path %}
+                                    <a href="{{ url_for('show_homework_sol', filename=hw.filename) }}" target="_blank">Show</a>
+                                    {% else %}
+                                    <span class="text-muted">None</span>
+                                    {% endif %}
+                                </td>
+                                </tr>
+                            {% endfor %}
+                        
+                    </tbody>
+                    </table>
+                </div>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
 </div>
 {% endblock %}
