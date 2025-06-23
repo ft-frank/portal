@@ -214,11 +214,11 @@ def upload_questions():
 # Admin setup
 class AdminModelView(ModelView):
     None
-    # def is_accessible(self):
-    #     return current_user.is_authenticated and current_user.role == 'admin'
+    def is_accessible(self):
+        return current_user.is_authenticated and current_user.role == 'admin'
 
-    # def inaccessible_callback(self, name, **kwargs):
-    #     return redirect(url_for('login'))
+    def inaccessible_callback(self, name, **kwargs):
+        return redirect(url_for('login'))
 
 admin = Admin(app, name='Admin Panel')
 admin.add_view(AdminModelView(User, db.session))
